@@ -1,0 +1,69 @@
+@use './colors' as *;
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.white-block {
+	position: absolute;
+	height: 40px;
+	width: 60%;
+	background-color: $pure-white;
+	// background-color: red; <--- robocze w trakcie testów
+
+	&-left {
+		bottom: 0;
+		left: -50px;
+		transform: skew(70deg);
+	}
+
+	// WPISANE W KURSIE A NIE MA TEGO NIGDZIE? - ZADEN ELEMENT NEI MA NADANEJ TAKIEJ KLASY????
+
+	&-right {
+		top: 0;
+		right: -50px;
+		transform: skew(70deg);
+	}
+}
+
+.btn-special-animation {
+	position: relative;
+	transition: background-color 1s;
+	overflow: hidden;
+	z-index: 0;
+
+	&::before {
+		display: block;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		transition: transform 1s;
+		transform-origin: right;
+		transform: scaleX(0);
+		z-index: -1;
+	}
+
+	&:hover::before {
+		transform-origin: left;
+		transform: scaleX(1);
+	}
+}
+
+.section-heading {
+	position: relative;
+	font-size: 4rem;
+	margin-bottom: 2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 400;
+	text-align: center;
+}
+
+.section-padding {
+	padding: 6em 2em;
+}

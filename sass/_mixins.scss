@@ -1,0 +1,43 @@
+@use './colors' as *;
+
+@mixin burgerBtn {
+	position: absolute;
+	height: 5px;
+	right: 0px;
+	background-color: $pure-white;
+	content: '';
+	transition: width 0.3s;
+}
+
+@mixin heroImage($bgImg) {
+	background-image: $blue-gradient, url($bgImg);
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+@mixin buttonInfo {
+	position: absolute;
+	bottom: 1em;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: $green-color;
+	border-radius: 8px;
+	padding: 0.5em 2em;
+	border: none;
+	cursor: pointer;
+	width: 30%;
+	font-size: 3rem;
+
+	&::before {
+		background-color: $green-color-hover;
+	}
+}
+
+@mixin contactForm {
+	margin-bottom: 2em;
+	padding: 0.6em 1.2em;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.6rem;
+}
